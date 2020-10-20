@@ -8,9 +8,9 @@ provider "okta" {
     api_token = var.api_token
 }
 
-resource "okta_user_schema" "dob_extension" {
-  index  = "date_of_birth"
-  title  = "Date of Birth"
+resource "okta_user_schema" "terratest_extension" {
+  index  = "terra_cloud_var"
+  title  = "Terra Test Cloud"
   type   = "string"
   master = "PROFILE_MASTER"
 }
