@@ -9,5 +9,5 @@ data "okta_users" "example" {
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = [tostring(data.okta_users.example.users)]
+  users = [data.okta_users.example.users[1]]
 }
