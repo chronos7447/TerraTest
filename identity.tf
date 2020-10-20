@@ -24,3 +24,10 @@ resource "okta_user_schema" "crn_extension" {
   depends_on = [okta_user_schema.terratest_extension_dev]
 }
 
+data "okta_users" "example" {
+  search {
+    name       = "profile.role"
+    value      = "Testing"
+    comparison = "sw"
+  }
+}
