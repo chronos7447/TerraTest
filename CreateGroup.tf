@@ -1,7 +1,7 @@
 data "okta_users" "example" {
   search {
-    name       = "profile.lastName"
-    value      = "Admin01"
+    name       = "profile.role"
+    value      = "Testing"
     comparison = "sw"
   }
 }
