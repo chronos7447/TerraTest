@@ -1,4 +1,4 @@
-data "okta_user" "example" {
+data "okta_users" "example" {
   search {
     name       = "profile.lastName"
     value      = "Admin01"
@@ -9,5 +9,5 @@ data "okta_user" "example" {
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = [data.okta_user.example.user_id]
+  users = [data.okta_users.example.users]
 }
