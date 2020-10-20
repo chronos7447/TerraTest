@@ -8,9 +8,12 @@ provider "okta" {
     api_token = var.api_token
 }
 
-resource "okta_user_schema" "terratest_extension_dev" {
-  index  = "terra_cloud_var_dev"
-  title  = "Terra Test Cloud dev"
+resource "okta_user_schema" "crn_extension" {
+  index  = "customer_reference_number"
+  title  = "Customer Reference Number"
+  required = true
   type   = "string"
   master = "PROFILE_MASTER"
+  depends_on = [okta_user_schema.dob_extension]
 }
+
