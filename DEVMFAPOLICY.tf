@@ -10,7 +10,7 @@ resource "okta_policy_mfa" "TerraMFAPolicy" {
   groups_included = ["00gzwvbpeLoYBsD9O4x6"]
 }
 
-resource "okta_policy_mfa_rule" "TerraMFARule" {
+resource "okta_policy_rule_mfa" "TerraMFARule" {
   policyid = "00p17l45g9kcvT3xU4x7"
   name = "TerraMFARule"
   status = "ACTIVE"
