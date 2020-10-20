@@ -24,3 +24,14 @@ resource "okta_user_schema" "crn_extension" {
   depends_on = [okta_user_schema.terratest_extension_dev]
 }
 
+resource "okta_policy_mfa" "TerraMFAPolicy" {
+  name        = "TerraMFAPolicy"
+  status      = "ACTIVE"
+  description = "TerraMFAPolicyExample"
+
+  okta_otp = {
+    enroll = "REQUIRED"
+  }
+
+  groups_included = ["00gzwvbpeLoYBsD9O4x6"]
+}
