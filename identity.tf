@@ -8,13 +8,6 @@ provider "okta" {
     api_token = var.api_token
 }
 
-resource "okta_user_schema" "terratest_extension_dev" {
-  index  = "terra_cloud_var_dev"
-  title  = "Terra Test Cloud dev"
-  type   = "string"
-  master = "PROFILE_MASTER"
-}
-
 resource "okta_user_schema" "terratest_extension" {
   index  = "terra_cloud_var"
   title  = "Terra Test Cloud"
