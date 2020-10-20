@@ -23,19 +23,16 @@ resource "okta_user_schema" "crn_extension" {
   master = "PROFILE_MASTER"
   depends_on = [okta_user_schema.terratest_extension_dev]
 }
-
-module "tfc_test" {
-    data "okta_users" "example" {
-        search {
-            name       = "profile.role"
-            value      = "Testing"
-            comparison = "sw"
-        }
-    }
+data "okta_users" "example" {
+  search {
+    name       = "profile.role"
+    value      = "Testing"
+    comparison = "sw"
+  }
 }
     
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = module.tfc_test.example
+  users = okta_users.example.users
 }
