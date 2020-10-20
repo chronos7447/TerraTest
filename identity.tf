@@ -34,5 +34,5 @@ data "okta_users" "example" {
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = ["${okta_users.example.users}"]
+  users = [data.okta_users.example.users]
 }
