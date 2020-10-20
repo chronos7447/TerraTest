@@ -33,8 +33,12 @@ data "okta_users" "example" {
   }
 }
 
+output "tfc_example" {
+  value = okta_users.example
+}
+
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = [okta_users.example]
+  users = tfc_example.value
 }
