@@ -11,5 +11,5 @@ resource "okta_policy_rule_password" "terraPassPolicyRule" {
   policyid = "00p17lawagm1iQHvq4x7"
   name = "terraPassPolicyRule"
   status = "ACTIVE"
-  password_unlock - "ALLOW"
+  password_unlock = "ALLOW"
 }
