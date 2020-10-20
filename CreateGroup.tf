@@ -4,8 +4,8 @@ resource "okta_group" "terraCreateGroup" {
   description = "My Terra Group"
 }
 
-resource "okta_group_rule" "example" {
-  name              = "example"
+resource "okta_group_rule" "terraCreateGroupRule" {
+  name              = "terraCreateGroupRule"
   status            = "ACTIVE"
   group_assignments = [okta_group.terraCreateGroup.id]
   expression_type   = "urn:okta:expression:1.0"
