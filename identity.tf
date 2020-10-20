@@ -24,21 +24,18 @@ resource "okta_user_schema" "crn_extension" {
   depends_on = [okta_user_schema.terratest_extension_dev]
 }
 
-
-data "okta_users" "example" {
-  search {
-    name       = "profile.role"
-    value      = "Testing"
-    comparison = "sw"
-  }
+module "tfc_test" {
+    data "okta_users" "example" {
+        search {
+            name       = "profile.role"
+            value      = "Testing"
+            comparison = "sw"
+        }
+    }
 }
-
-output "tfc_example" {
-  value = okta_users.example
-}
-
+    
 resource "okta_group" "terraCreateGroup" {
   name        = "GroupCreatedUsingTerra"
   description = "My Terra Group"
-  users = tfc_example.value
+  users = module.tfc_test.example
 }
