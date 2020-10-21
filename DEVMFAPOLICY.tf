@@ -7,11 +7,11 @@ resource "okta_policy_mfa" "TerraMFAPolicy" {
     enroll = "REQUIRED"
   }
 
-  groups_included = ["00gzwvbpeLoYBsD9O4x6"]
+  groups_included = [okta_group.terraCreateGroup.id]
 }
 
 resource "okta_policy_rule_mfa" "TerraMFARule" {
-  policyid = "00p17l45g9kcvT3xU4x7"
+  policyid = [okta_policy_mfa.TerraMFAPolicy.id]
   name = "TerraMFARule"
   status = "ACTIVE"
   enroll = "CHALLENGE"
