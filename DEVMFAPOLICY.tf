@@ -11,7 +11,7 @@ resource "okta_policy_mfa" "TerraMFAPolicy" {
 }
 
 resource "okta_policy_rule_mfa" "TerraMFARule" {
-  policyid = tostring([okta_policy_mfa.TerraMFAPolicy.id])
+  policyid = join([okta_policy_mfa.TerraMFAPolicy.id])
   name = "TerraMFARule"
   status = "ACTIVE"
   enroll = "CHALLENGE"
