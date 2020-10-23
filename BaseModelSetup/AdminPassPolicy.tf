@@ -17,7 +17,6 @@ resource "okta_policy_password" "PassPolicy" {
   password_expire_warn_days = 5
   password_max_lockout_attempts = 6
   groups_included        = [okta_group.CreateGroup.id]
-  question_recovery = "INACTIVE"
 }
 
 resource "okta_policy_rule_password" "PassPolicyRule" {
