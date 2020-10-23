@@ -59,6 +59,7 @@ resource "okta_policy_rule_password" "PassPolicyRule01" {
   policyid = join("",[okta_policy_password.PassPolicy01.id])
   name = "Password/Account Self Service Rule"
   status = "ACTIVE"
+  password_unlock = "ALLOW"
 }
 
 
