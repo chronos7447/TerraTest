@@ -23,8 +23,8 @@ resource "okta_network_zone" "AIG" {
 "221.122.91.0/24"]
 }
 
-resource "okta_network_zone" "AIG Corporate" {
-  name     = "AIG Corporate"
+resource "okta_network_zone" "AIG_Corporate" {
+  name     = "AIG_Corporate"
   type     = "IP"
   gateways = ["167.230.0.0/16",
 "167.247.0.0/16",
@@ -55,7 +55,7 @@ resource "okta_network_zone" "AIG Corporate" {
 "158.43.19.78-158.43.19.78",
 "180.168.133.38-180.168.133.38",
 "180.166.28.18-180.166.28.18",
-"14.23.86.242-14.23.86.242",
+"14.23.86.242-14.23.86.242"]
   proxies  = ["104.129.204.0/23",
 "104.129.196.0/23",
 "165.225.34.0/23",
