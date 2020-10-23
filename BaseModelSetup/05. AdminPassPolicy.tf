@@ -34,6 +34,7 @@ resource "okta_policy_rule_password" "PassPolicyRule" {
 resource "okta_policy_password" "PassPolicy01" {
   name                   = "Customers"
   status                 = "ACTIVE"
+  #question_recovery      = "INACTIVE"
   description            = "Password Policy For Customers"
   auth_provider = "OKTA"
   password_min_length = 8
