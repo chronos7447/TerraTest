@@ -1,7 +1,7 @@
 resource "okta_policy_password" "PassPolicy" {
   name                   = "Administrator"
   status                 = "ACTIVE"
-  description            = "terraPassPolicyExample"
+  description            = "Password Policy for Administrators"
   auth_provider = "OKTA"
   password_min_length = 8
   password_min_lowercase = "1"
@@ -32,7 +32,7 @@ resource "okta_policy_rule_password" "PassPolicyRule" {
 resource "okta_policy_password" "PassPolicy01" {
   name                   = "Customers"
   status                 = "ACTIVE"
-  description            = "terraPassPolicyExample"
+  description            = "Password Policy For Customers"
   auth_provider = "OKTA"
   password_min_length = 8
   password_min_lowercase = "1"
