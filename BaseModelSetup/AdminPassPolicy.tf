@@ -1,5 +1,6 @@
 resource "okta_policy_password" "PassPolicy" {
   name                   = "Administrator"
+  priority = "1"
   status                 = "ACTIVE"
   description            = "Password Policy for Administrators"
   auth_provider = "OKTA"
