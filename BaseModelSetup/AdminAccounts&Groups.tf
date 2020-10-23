@@ -5,6 +5,4 @@ resource "okta_user" "User01" {
   last_name = "User01"
   status    = "ACTIVE"
   password  = "George01"
-  master      = "OKTA"
-  scope       = "SELF"
 }
