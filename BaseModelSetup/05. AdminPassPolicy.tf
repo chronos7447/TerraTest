@@ -2,6 +2,7 @@ resource "okta_policy_password" "PassPolicy" {
   name                   = "Administrator"
   priority = "1"
   status                 = "ACTIVE"
+  #question_recovery      = "INACTIVE"
   description            = "Password Policy for Administrators"
   auth_provider = "OKTA"
   password_min_length = 8
