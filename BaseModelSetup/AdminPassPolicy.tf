@@ -50,7 +50,7 @@ resource "okta_policy_password" "PassPolicy01" {
   password_auto_unlock_minutes = 30
   sms_recovery = "ACTIVE"
   email_recovery = "ACTIVE"
-  call_recovery = "ACTIVE"
+  #call_recovery = "ACTIVE"
   #groups_included        = [okta_group.CreateGroup.id]
 }
 
