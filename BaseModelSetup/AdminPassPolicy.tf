@@ -1,7 +1,6 @@
 resource "okta_policy_password" "PassPolicy" {
   name                   = "Administrator"
   status                 = "ACTIVE"
-  question_recovery      = "INACTIVE"
   description            = "terraPassPolicyExample"
   auth_provider = "OKTA"
   password_min_length = 8
