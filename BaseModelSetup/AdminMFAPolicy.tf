@@ -42,10 +42,11 @@ resource "okta_policy_mfa" "MFAPolicy" {
 
   okta_otp = {
     enroll = "REQUIRED"
+    okta_push = {
+        enroll = "REQUIRED"
+    }
   }
-  okta_push = {
-    enroll = "REQUIRED"
-  }
+ 
   groups_included = [okta_group.CreateGroup.id]
 }
 
