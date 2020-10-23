@@ -31,4 +31,5 @@ resource "okta_factor" "factor_enable04" {
 #resource "okta_factor" "factor_enable06" {
  # provider_id = "fido_webauthn"
  # active = "true"
+
 #}
