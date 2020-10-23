@@ -42,6 +42,7 @@ resource "okta_policy_mfa" "MFAPolicy" {
 
   okta_otp = {
     enroll = "REQUIRED"
+    okta_push = "true"
   }
   #okta_push = {
     #enroll = "REQUIRED"
