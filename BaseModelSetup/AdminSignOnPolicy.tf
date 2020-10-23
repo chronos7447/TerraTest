@@ -35,6 +35,7 @@ resource "okta_policy_rule_signon" "SignOnRuleNetwork02" {
   policyid = join("",[data.okta_policy.Default.id])
   name = "Network Zone Restriction Rule "
   network_connection = "ZONE"
+  newtork_excludes = []
   access = "DENY"
   priority = "1"
 }
