@@ -28,6 +28,6 @@ resource "okta_group" "CreateGroup" {
 }
 
 resource "okta_group_roles" "AdminRoletoL3" {
-  group_id    = "okta_group.CreateGroup.id"
+  group_id    = tostring(okta_group.CreateGroup.id)
   admin_roles = ["SUPER_ADMIN"]
 }
