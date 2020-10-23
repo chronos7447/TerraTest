@@ -27,7 +27,7 @@ resource "okta_policy_rule_signon" "SignOnRuleNetwork" {
 
 data "okta_policy" "Default" {
   name = "Default Policy"
-  type = "SIGNON"
+  type = "OKTA_SIGN_ON"
 }
 
 
