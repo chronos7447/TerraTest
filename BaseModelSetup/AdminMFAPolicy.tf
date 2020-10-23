@@ -1,5 +1,10 @@
 resource "okta_factor" "factor_enable" {
-  provider_id = ["okta_otp", "okta_push"]
+  provider_id = "okta_otp"
+  active = "true"
+}
+
+resource "okta_factor" "factor_enable01" {
+  provider_id = "okta_push"
   active = "true"
 }
 
