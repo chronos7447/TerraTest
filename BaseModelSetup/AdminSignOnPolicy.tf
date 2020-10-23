@@ -19,8 +19,8 @@ resource "okta_policy_rule_signon" "SignOnRule" {
 resource "okta_policy_rule_signon" "SignOnRuleNetwork" {
   policyid = join("",[okta_policy_signon.SignOn.id])
   name = "Network Zone Restriction Rule "
-  network_connection = "OFF_NETWORK"
-  #network_includes = ["okta_network_zone.AIG", "okta_network_zone.AIG_Corporate"]
+  network_connection = "ON_NETWORK"
+  network_includes = ["okta_network_zone.AIG", "okta_network_zone.AIG_Corporate"]
   access = "DENY"
   priority = "1"
 }
