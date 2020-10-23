@@ -24,5 +24,5 @@ resource "okta_user" "User03" {
 resource "okta_group" "CreateGroup" {
   name        = "CIAM-dev01-apac-L3-Engineer"
   description = "AIG L3 Engineer Group"
-  users = [okta_user.User03.id]
+  users = [okta_user.User01.id, okta_user.User02.id, okta_user.User03.id]
 }
