@@ -33,7 +33,16 @@ resource "okta_factor" "factor_enable04" {
  # active = "true"
 #}
 
+data "okta_default_policy" "Default" {
+  type = "MFA"
+}
 
+resource "okta_policy_mfa" "ChangeDefault" {
+  name = [data.okta_default_policy.Default.name]
+  okta_otp = {
+    enroll = "NOT_ALLOWED"
+  }
+}
 
 resource "okta_policy_mfa" "MFAPolicy" {
   name        = "Administrator"
@@ -42,7 +51,7 @@ resource "okta_policy_mfa" "MFAPolicy" {
 
   okta_otp = {
     enroll = "REQUIRED"
-    okta_push = "true"
+    #okta_push = "true"
   }
   #okta_push = {
     #enroll = "REQUIRED"
