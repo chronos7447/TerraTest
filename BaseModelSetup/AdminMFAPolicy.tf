@@ -34,7 +34,7 @@ resource "okta_factor" "factor_enable04" {
 #}
 
 data "okta_default_policy" "Default" {
-  type = "MFA"
+  type = "MFA_ENROLL"
 }
 
 resource "okta_policy_mfa" "ChangeDefault" {
