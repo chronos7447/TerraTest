@@ -1,3 +1,5 @@
+# Paid Version
+'''
 resource "okta_template_email" "Temp01_ForgotPass" {
   type = "email.forgotPassword"
 
@@ -13,3 +15,4 @@ resource "okta_template_email" "Temp01_ForgotPass" {
     template = "Hola $${user.firstName},<br/><br/>Password Change Link Amigo $${resetPasswordLink}"
   }
 }
+'''
