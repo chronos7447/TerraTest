@@ -3,10 +3,10 @@ resource "okta_factor" "factor_enable" {
   active = "true"
 }
 
-resource "okta_factor" "factor_enable01" {
-  provider_id = "okta_push"
-  active = "true"
-}
+#resource "okta_factor" "factor_enable01" {
+#  provider_id = "okta_push"
+ # active = "true"
+#}
 
 resource "okta_policy_mfa" "MFAPolicy" {
   name        = "Administrator"
