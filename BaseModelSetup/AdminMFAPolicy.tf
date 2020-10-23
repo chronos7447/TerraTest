@@ -23,14 +23,15 @@ resource "okta_factor" "factor_enable04" {
   active = "true"
 }
 
-#resource "okta_factor" "factor_enable05" {
-  #provider_id = "okta_email"
- # active = "true"
-#}
-resource "okta_factor" "factor_enable06" {
-  provider_id = "fido_webauthn"
+resource "okta_factor" "factor_enable05" {
+  provider_id = "duo"
   active = "true"
 }
+
+#resource "okta_factor" "factor_enable06" {
+ # provider_id = "fido_webauthn"
+ # active = "true"
+#}
 
 
 
