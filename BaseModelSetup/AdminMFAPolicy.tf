@@ -38,7 +38,7 @@ data "okta_default_policy" "Default" {
 }
 
 resource "okta_policy_mfa" "ChangeDefault" {
-  name = [data.okta_default_policy.Default.name]
+  name = "Default Policy"
   okta_otp = {
     enroll = "NOT_ALLOWED"
   }
