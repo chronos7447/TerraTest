@@ -26,3 +26,8 @@ resource "okta_group" "CreateGroup" {
   description = "AIG L3 Engineer Group"
   users = [okta_user.User01.id, okta_user.User02.id, okta_user.User03.id]
 }
+
+resource "okta_group_roles" "AdminRoletoL3" {
+  group_id    = [okta_group.CreateGroup.id]
+  admin_roles = ["SUPER_ADMIN"]
+}
